@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/aladinelkhalil/intensive-trello/issues"
   },
-  "homepage": "https://github.com/aladinelkhalil/intensive-trello#readme"
+  "homepage": "https://github.com/aladinelkhalil/intensive-trello#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "mongoose": "^6.2.4"
+  }
 }
