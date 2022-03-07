@@ -1,0 +1,22 @@
+{
+  "name": "intensive_trello",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aladinelkhalil/intensive-trello.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aladinelkhalil/intensive-trello/issues"
+  },
+  "homepage": "https://github.com/aladinelkhalil/intensive-trello#readme"
+}
