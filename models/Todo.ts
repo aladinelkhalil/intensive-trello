@@ -1,14 +1,15 @@
-const Joi = require("joi");
-const mongoose = require("mongoose");
+import Joi from "joi";
+import mongoose from "mongoose";
+import { Todo } from "types/Todo";
 
-const schema = mongoose.Schema({
+const schema = new mongoose.Schema({
   title: String,
   description: String,
 });
 
 const Todo = mongoose.model("Todo", schema);
 
-function validateTodo(todo) {
+function validateTodo(todo: Todo) {
   const schema = Joi.object({
     title: Joi.string().required(),
     description: Joi.string().required(),
@@ -17,5 +18,4 @@ function validateTodo(todo) {
   return schema.validate(todo);
 }
 
-exports.Todo = Todo;
-exports.validate = validateTodo;
+export { Todo, validateTodo as validate };

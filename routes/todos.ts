@@ -1,13 +1,13 @@
-const express = require("express");
-const { Todo, validate } = require("../models/Todo");
+import express, { Request, Response } from "express";
+import { Todo, validate } from "models/Todo";
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/", async (req: Request, res: Response) => {
   const todos = await Todo.find();
   return res.send(todos);
 });
 
-router.post("/", async (req, res) => {
+router.post("/", async (req: Request, res: Response) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.message);
 
@@ -21,9 +21,9 @@ router.post("/", async (req, res) => {
   return res.send(todo);
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", async (req: Request, res: Response) => {
   const todo = await Todo.findByIdAndDelete(req.params.id);
   return res.send(todo);
 });
 
-module.exports = router;
+export default router;
