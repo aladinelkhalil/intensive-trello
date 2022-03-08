@@ -1,7 +1,14 @@
 import axios from "axios";
 import { Todo } from "../types/Todo";
 
-const apiEndpoint = "http://localhost:8080/api/todos";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://intensive-trello.herokuapp.com"
+    : "http://localhost:8080";
+
+console.log(process.env.NODE_ENV);
+
+const apiEndpoint = `${baseUrl}/api/todos`;
 
 export function getTodos() {
   return axios.get<Todo[]>(apiEndpoint);
